@@ -5,8 +5,8 @@ import org.junit.jupiter.api.Test;
 public class TestEjercicioContarNum {
     @Test
     public void testContarNumIguales() {
-        Integer[] input= {1,1,1,1};
-        String outputEsperado = "{1=4}";
+        String[] input= {a,b,c,d};
+        String outputEsperado = "{a=1}";
         String outputActual = EjercicioContarNumeros.contarRepeticiones(input);
         Assertions.assertEquals(outputEsperado, outputActual);
     }

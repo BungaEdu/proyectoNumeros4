@@ -6,29 +6,27 @@ import java.util.Scanner;
 public class EjercicioContarNumeros {
 
     public static void main(String[] args) {
-        Integer[] arrayNum = new Integer[10];
+        Integer[] arrayCad = new Integer[10];
         Scanner sc = new Scanner(System.in);
 
-        for (int i = 0; i < arrayNum.length; i++) {
-            arrayNum[i] = sc.nextInt();
-        }
-        System.out.println(contarRepeticiones(arrayNum));
+        System.out.println("Dime la cadena: ");
+        String cadena= sc.nextLine();
+
+        char cadenaToChar[]= cadena.toCharArray();
+
+        System.out.println(contarRepeticiones(cadenaToChar));
 
     }
 
-    public static String contarRepeticiones(Integer[] arrayNum) {
-
-        if (arrayNum==null)
-            return null;
-
-        HashMap<Integer, Integer> map = new HashMap<>();
-        for (Integer num : arrayNum) {
-            if (map.containsKey(num)) {
-                Integer value = map.get(num);
+    public static String contarRepeticiones(char[] array) {
+        HashMap<Character, Integer> map = new HashMap<>();
+        for (char caracter : array) {
+            if (map.containsKey(caracter)) {
+                Integer value = map.get(caracter);
                 value++;
-                map.replace(num, value);
+                map.replace(caracter, value);
             } else {
-                map.put(num, 1);
+                map.put(caracter, 1);
             }
         }
         return map.toString();
